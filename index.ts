@@ -1,13 +1,11 @@
-const name = "Jaeeun",
-age = 24,
-gender = "female";
-
-const sayHi = (name, age, gender?) => {
+const sayHi = (name:string, age:Number, gender:string): void => {
     console.log(`Hello ${name}, you are ${age}, you are a ${gender}`);
+    // return 사용 불가 (:void)
 };
+// 타입 설정함
 
-sayHi(name, age); 
-// sayHi parameter의 gender 끝에 ? 없으면 에러 발생
-//JavaScript는 그렇지 않음
+sayHi("jaeeun", 24, "female")
+//sayHi("2", "24", 14); 
+// 여러 개가 틀려도 첫번째 거만 찾아줌
 
 export {};
