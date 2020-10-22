@@ -1,25 +1,28 @@
-class Human {
-    public name: string;
-    public age: number;
-    public gender: string;
-    constructor(name: string, age: number, gender: string){
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-    }    
+class Block {
+    public index: number;
+    public hash: string;
+    public previousHash: string;
+    public data: string;
+    public timestamp: number;
+    constructor(
+        index: number,
+        hash: string,
+        previousHash: string,
+        data: string,
+        timestamp: number,
+    ){
+        this.index = index;
+        this.hash = hash;
+        this.previousHash = previousHash;
+        this.data = data;
+        this.timestamp = timestamp;
+    }
 }
-// name이 private이면 class 밖인 ${person.name}에서 호출 불가능
 
-const h1 = new Human("jaeeun", 24, "female");
+const genesisBlock:Block = new Block(0, "2343253", "234", "hi", 12345);
 
-const sayHi = (person: Human): void => {
-    console.log(`Hello ${person.name}, you are ${person.age}, you are a ${person.gender}`);
-    // return 사용 불가 (:void)
-};
-// 타입 설정함
+let blockchain: [Block] = [genesisBlock];
 
-sayHi(h1)
-//sayHi("2", "24", 14); 
-// 여러 개가 틀려도 첫번째 거만 찾아줌
+console.log(blockchain);
 
 export {};
